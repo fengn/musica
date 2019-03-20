@@ -6,10 +6,11 @@ import { MusicProvider } from '../../providers/music/music';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
+
 export class HomePage {
 
   public allMusic = [];
-
   constructor(
     private loadingController: LoadingController,
   	public navCtrl: NavController,
@@ -27,7 +28,7 @@ export class HomePage {
   	  .subscribe(musicList => {
         allMusicLoadingController.dismiss();
   	  	this.allMusic = musicList;
-        console.log(musicList)
+        console.log(this.allMusic)
   	  });
   }
 }
