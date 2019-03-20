@@ -19,14 +19,15 @@ export class HomePage {
   
   ionViewDidLoad(){
   	let allMusicLoadingController = this.loadingController.create({
-  		spinner: 'hide',
+  		spinner: 'ios',
   		content: "Getting your Music from Server"
   	});
   	allMusicLoadingController.present();
   	this.musicPrivider.getMusic()
   	  .subscribe(musicList => {
         allMusicLoadingController.dismiss();
-  	  	this.allMusic = musicList
+  	  	this.allMusic = musicList;
+        console.log(musicList)
   	  });
   }
 }

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 //import 'rxjs/add/operator/map';
 
@@ -9,7 +9,12 @@ import { Injectable } from '@angular/core';
   and Angular DI.
 */
 
-const API:string = "https://orangevalleycaa.org/api/music";
+// const API:string = "https://orangevalleycaa.org/api/music";
+const API:string = "http://databus.gsdata.cn:8888/api/service?start_date=2018-08-20&end_date=2018-09-07";
+
+const headers = new HttpHeaders()
+            .set("access-token", "YzkxYWVmNDJjNmI2ZjRmNzQ0N2I0MmE0NGI3ODBlYWI6MTM5NjZmZjA5MzdlYTNjOWFmZWQzOTY4OTY4ZjI1NWU6L3B1YnNlbnQvaG90LWV2ZW50L2luZGV4");
+
 @Injectable()
 export class MusicProvider {
 
@@ -18,7 +23,7 @@ export class MusicProvider {
   }
   
   getMusic(){
-  	return this.http.get(API);
+  	return this.http.get(API,{headers});
   }
 
 }
