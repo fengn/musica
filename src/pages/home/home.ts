@@ -11,7 +11,7 @@ import { AllMusic } from '../home/allMusic';
 
 export class HomePage {
 
-  //public allMusic: any;
+  public allMusic: AllMusic;
 
   public hotEvents = [];
   constructor(
@@ -29,9 +29,10 @@ export class HomePage {
   	this.musicPrivider.getMusic()
   	  .subscribe(musicList => {
         allMusicLoadingController.dismiss();
-  	  	//this.allMusic = musicList;
-        this.hotEvents = musicList.data.hot_events;
-        console.log(musicList.data.hot_events)
+  	  	this.allMusic = musicList as any;
+        this.hotEvents = this.allMusic.data.hot_events;
+        console.log(this.hotEvents)
+        //(musicList: AllMusic)
   	  });
   }
 }
