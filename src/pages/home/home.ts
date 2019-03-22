@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController,LoadingController } from 'ionic-angular';
 
 import { MusicProvider } from '../../providers/music/music';
+import { AllMusic } from '../home/allMusic';
 
 @Component({
   selector: 'page-home',
@@ -10,12 +11,13 @@ import { MusicProvider } from '../../providers/music/music';
 
 export class HomePage {
 
-  public allMusic : any;
+  //public allMusic: any;
+
+  public hotEvents = [];
   constructor(
     private loadingController: LoadingController,
   	public navCtrl: NavController,
   	private musicPrivider: MusicProvider) {
-
   }
   
   ionViewDidLoad(){
@@ -27,8 +29,9 @@ export class HomePage {
   	this.musicPrivider.getMusic()
   	  .subscribe(musicList => {
         allMusicLoadingController.dismiss();
-  	  	this.allMusic = musicList;
-        console.log(this.allMusic)
+  	  	//this.allMusic = musicList;
+        this.hotEvents = musicList.data.hot_events;
+        console.log(musicList.data.hot_events)
   	  });
   }
 }
