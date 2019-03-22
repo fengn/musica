@@ -11,12 +11,15 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MusicProvider } from '../providers/music/music';
+import { KeysPipe } from '../pipes/keys/keys';
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    KeysPipe
   ],
   imports: [
     HttpClientModule,

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController,LoadingController } from 'ionic-angular';
+
 import { MusicProvider } from '../../providers/music/music';
 
 @Component({
@@ -7,10 +8,9 @@ import { MusicProvider } from '../../providers/music/music';
   templateUrl: 'home.html'
 })
 
-
 export class HomePage {
 
-  public allMusic = [];
+  public allMusic : any;
   constructor(
     private loadingController: LoadingController,
   	public navCtrl: NavController,
