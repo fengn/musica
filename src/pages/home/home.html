@@ -8,6 +8,10 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-refresher (ionRefresh)="addOneSong()">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
   <ion-card *ngFor="let music of hotEvents">
   <img [src]="music.icon">
     <ion-card-content>
