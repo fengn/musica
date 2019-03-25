@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Hero } from '../heroes/mock-heroes';
 
 /**
  * Generated class for the HeroDetailComponent component.
@@ -12,11 +13,9 @@ import { Component } from '@angular/core';
 })
 export class HeroDetailComponent {
 
-  text: string;
-
+  @Input() hero: Hero;
   constructor() {
     console.log('Hello HeroDetailComponent Component');
-    this.text = 'Hello World';
   }
 
 }
