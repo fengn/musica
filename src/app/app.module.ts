@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { HeroPage } from '../pages/hero/hero';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,6 +21,7 @@ import { KeysPipe } from '../pipes/keys/keys';
     MyApp,
     HomePage,
     ListPage,
+    HeroPage,
     KeysPipe
   ],
   imports: [
@@ -30,7 +33,8 @@ import { KeysPipe } from '../pipes/keys/keys';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    HeroPage
   ],
   providers: [
     StatusBar,
