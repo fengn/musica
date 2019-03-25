@@ -15,6 +15,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { MusicProvider } from '../providers/music/music';
 import { KeysPipe } from '../pipes/keys/keys';
 
+import { ComponentsModule } from '../components/components.module';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { KeysPipe } from '../pipes/keys/keys';
   imports: [
     HttpClientModule,
     BrowserModule,
+    ComponentsModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
