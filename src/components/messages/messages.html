@@ -1,0 +1,7 @@
+<!-- Generated template for the MessagesComponent component -->
+<div>
+  <h2>Messages</h2>
+  <button class="clear" 
+    (click)="messageProvider.clear()">clear</button>
+  <div *ngFor='let message of messageProvider.messages'> {{message}} </div>
+</div>

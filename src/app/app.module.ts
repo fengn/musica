@@ -16,6 +16,8 @@ import { MusicProvider } from '../providers/music/music';
 import { KeysPipe } from '../pipes/keys/keys';
 
 import { ComponentsModule } from '../components/components.module';
+import { HeroProvider } from '../providers/hero/hero';
+import { MessageProvider } from '../providers/message/message';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { ComponentsModule } from '../components/components.module';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MusicProvider
+    MusicProvider,
+    HeroProvider,
+    MessageProvider
   ]
 })
 export class AppModule {}

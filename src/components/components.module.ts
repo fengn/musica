@@ -3,12 +3,15 @@ import { HeroDetailComponent } from './hero-detail/hero-detail';
 import { HeroesComponent } from './heroes/heroes';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { MessagesComponent } from './messages/messages';
 
 @NgModule({
 	declarations: [HeroDetailComponent,
-    HeroesComponent],
+    HeroesComponent,
+    MessagesComponent],
 	imports: [BrowserModule, FormsModule],
 	exports: [HeroDetailComponent,
-    HeroesComponent]
+    HeroesComponent,
+    MessagesComponent]
 })
 export class ComponentsModule {}

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { HEROES, Hero } from '../heroes/mock-heroes';
+import { Hero } from '../../providers/hero/mock-heroes';
+
+import { HeroProvider } from '../../providers/hero/hero';
 
 /**
  * Generated class for the HeroesComponent component.
@@ -13,19 +15,26 @@ import { HEROES, Hero } from '../heroes/mock-heroes';
 })
 export class HeroesComponent {
 
-  heroes = HEROES;
+  heroes: Hero[];
   selectedHero: Hero;
   // hero: Hero = {
   //   id: 1,
   //   name: 'Windstorm'
   // };
 
-  constructor() {
+  constructor(private heroPrivider: HeroProvider) {
     console.log('Hello HeroesComponent Component');
+    this.getHeroes();
   }
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
+
+  getHeroes(): void {
+  //this.heroes = this.heroPrivider.getHeroes();
+  this.heroPrivider.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
+}
 
 }

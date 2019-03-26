@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Hero } from '../heroes/mock-heroes';
+import { Hero } from '../../providers/hero/mock-heroes';
 
 /**
  * Generated class for the HeroDetailComponent component.
