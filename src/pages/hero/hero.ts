@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DashboardPage } from '../../pages/dashboard/dashboard';
 
 /**
  * Generated class for the HeroPage page.
@@ -23,6 +24,16 @@ export class HeroPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HeroPage');
+  }
+
+  dashboardPage(event) {
+    // That's right, we're pushing to ourselves!
+    //this.navCtrl.push(HeroPage);
+  }
+
+  heroesPage(event) {
+    // That's right, we're pushing to ourselves!
+    this.navCtrl.push(DashboardPage);
   }
 
 }

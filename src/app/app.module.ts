@@ -8,7 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { HeroPage } from '../pages/hero/hero';
-
+import { DashboardPage } from '../pages/dashboard/dashboard';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,6 +26,7 @@ import { MessageProvider } from '../providers/message/message';
     HomePage,
     ListPage,
     HeroPage,
+    DashboardPage,
     KeysPipe
   ],
   imports: [
@@ -39,6 +40,7 @@ import { MessageProvider } from '../providers/message/message';
     MyApp,
     HomePage,
     ListPage,
+    DashboardPage,
     HeroPage
   ],
   providers: [
