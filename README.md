@@ -4,4 +4,6 @@
 3.add Tour of Heroes
 4.Create and use Compnents
 5.重构heropage,显示放入hero组件
+6.page router
+7.hero-detail by IonicPage
 

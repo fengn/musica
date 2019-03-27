@@ -1,0 +1,24 @@
+<!--
+  Generated template for the HeroDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>hero-detail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="selectedId">
+	  <h2>{{selectedName | uppercase}} Details</h2>
+	  <div><span>id: </span>{{selectedId}}</div>
+	  <div>
+	    <label>name:
+	      <input [(ngModel)]="selectedName" placeholder="name">
+	    </label>
+	  </div>
+	  <button (click)="goBack()">go back</button>
+  </div>
+</ion-content>

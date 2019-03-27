@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Hero } from '../../providers/hero/mock-heroes';
 
 import { HeroProvider } from '../../providers/hero/hero';
+import { NavController } from 'ionic-angular';
+import { HeroDetailPage } from '../../pages/hero-detail/hero-detail';
 
 /**
  * Generated class for the HeroesComponent component.
@@ -22,13 +24,18 @@ export class HeroesComponent {
   //   name: 'Windstorm'
   // };
 
-  constructor(private heroPrivider: HeroProvider) {
+  constructor(private heroPrivider: HeroProvider, public navCtrl: NavController) {
     console.log('Hello HeroesComponent Component');
     this.getHeroes();
   }
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    
+    this.navCtrl.push('your-page', {
+      'id': hero.id,
+      'name': hero.name
+    });
   }
 
   getHeroes(): void {

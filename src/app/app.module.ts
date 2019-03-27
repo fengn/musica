@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { HeroPage } from '../pages/hero/hero';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+//import { HeroDetailPage } from '../pages/hero-detail/hero-detail';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,6 +28,7 @@ import { MessageProvider } from '../providers/message/message';
     ListPage,
     HeroPage,
     DashboardPage,
+    //HeroDetailPage,
     KeysPipe
   ],
   imports: [
@@ -41,6 +43,7 @@ import { MessageProvider } from '../providers/message/message';
     HomePage,
     ListPage,
     DashboardPage,
+    //HeroDetailPage,
     HeroPage
   ],
   providers: [
