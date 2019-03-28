@@ -11,5 +11,9 @@
 </ion-header>
 
 <ion-content padding>
+  <nav>
+    <a (click)="dashboardPage($event)">Dashboard</a>
+    <a (click)="heroesPage($event)">Heroes</a>
+  </nav>
   <heroes></heroes>
 </ion-content>

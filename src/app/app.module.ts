@@ -19,7 +19,9 @@ import { KeysPipe } from '../pipes/keys/keys';
 import { ComponentsModule } from '../components/components.module';
 import { HeroProvider } from '../providers/hero/hero';
 import { MessageProvider } from '../providers/message/message';
+//import { InMemoryDataProvider } from '../providers/in-memory-data/in-memory-data';
 
+//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { MessageProvider } from '../providers/message/message';
   ],
   imports: [
     HttpClientModule,
+    //HttpClientInMemoryWebApiModule.forRoot(InMemoryDataProvider, { dataEncapsulation: false }),
     BrowserModule,
     ComponentsModule,
     IonicModule.forRoot(MyApp),
@@ -52,7 +55,8 @@ import { MessageProvider } from '../providers/message/message';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MusicProvider,
     HeroProvider,
-    MessageProvider
+    MessageProvider,
+    //InMemoryDataProvider
   ]
 })
 export class AppModule {}

@@ -39,7 +39,7 @@ export class HeroesComponent {
   }
 
   getHeroes(): void {
-  //this.heroes = this.heroPrivider.getHeroes();
+    //this.heroes = this.heroPrivider.getHeroes();
   this.heroPrivider.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
 }

@@ -15,6 +15,8 @@ import { MessageProvider } from '../message/message';
 @Injectable()
 export class HeroProvider {
 
+  //private heroesUrl = 'api/heroes';  // URL to web api
+
   constructor(public http: HttpClient, private messageProvider: MessageProvider) {
     console.log('Hello HeroProvider Provider');
   }
@@ -22,10 +24,14 @@ export class HeroProvider {
 	// getHeroes(): Hero[] {
 	//   return HEROES;
 	// }
-
+  /** Log a HeroService message with the MessageService */
+  private log(message: string) {
+    this.messageProvider.add(`HeroService: ${message}`);
+  }
 	getHeroes(): Observable<Hero[]> {
 		this.messageProvider.add('HeroService: fetched heroes');
     return of(HEROES);
+    //return this.http.get<Hero[]>(this.heroesUrl)
   }
 
 }

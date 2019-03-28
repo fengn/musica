@@ -6,4 +6,5 @@
 5.重构heropage,显示放入hero组件
 6.page router
 7.hero-detail by IonicPage
+8.angular-in-memory-web-api
 
