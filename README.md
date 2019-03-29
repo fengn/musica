@@ -7,4 +7,5 @@
 6.page router
 7.hero-detail by IonicPage
 8.angular-in-memory-web-api
+9.Adding pull to refresh
 

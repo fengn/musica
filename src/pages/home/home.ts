@@ -26,13 +26,27 @@ export class HomePage {
   		content: "Getting your Music from Server"
   	});
   	allMusicLoadingController.present();
+
   	this.musicPrivider.getMusic()
   	  .subscribe(musicList => {
         allMusicLoadingController.dismiss();
-  	  	this.allMusic = musicList as any;
-        this.hotEvents = this.allMusic.data.hot_events;
-        console.log(this.hotEvents)
+        this.hotEvents = musicList as any;
+  	  	//this.allMusic = musicList as any;
+        //this.hotEvents = this.allMusic.data.hot_events;
+        //console.log(this.hotEvents)
         //(musicList: AllMusic)
   	  });
+
+    setTimeout(() => {
+      allMusicLoadingController.dismiss();
+    }, 5000);
+  }
+
+  addOneSong(refresher){
+    this.musicPrivider.getOneSong()
+      .subscribe(oneSong => {
+        this.hotEvents.unshift(oneSong);
+        refresher.complete();
+      });
   }
 }
