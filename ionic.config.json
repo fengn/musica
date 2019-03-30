@@ -9,5 +9,6 @@
       "path": "/api",
       "proxyUrl": "http://databus.gsdata.cn:8888/api/service"
     }
-  ]
+  ],
+  "id": "12a21a60"
 }
