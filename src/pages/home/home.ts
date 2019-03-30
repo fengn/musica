@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController,LoadingController } from 'ionic-angular';
+import { NavController,LoadingController, ActionSheetController } from 'ionic-angular';
 
 import { MusicProvider } from '../../providers/music/music';
 import { AllMusic } from '../home/allMusic';
+import { SocialSharing } from '@ionic-native/social-sharing';
+
 
 @Component({
   selector: 'page-home',
@@ -15,6 +17,8 @@ export class HomePage {
 
   public hotEvents = [];
   constructor(
+    private socialSharing: SocialSharing,
+    private actionSheetController: ActionSheetController,
     private loadingController: LoadingController,
   	public navCtrl: NavController,
   	private musicPrivider: MusicProvider) {
@@ -48,5 +52,47 @@ export class HomePage {
         this.hotEvents.unshift(oneSong);
         refresher.complete();
       });
+  }
+
+  shareSong(music){
+    let actionSheet = this.actionSheetController.create({
+       title: 'Modify your album',
+         buttons: [
+           {
+             text: 'facebook',
+             icon: 'logo-facebook',
+             role: 'destructive',
+             handler: () => {
+               console.log('facebook clicked');
+               this.socialSharing.shareViaFacebook(music.name, music.image, music.music_url);
+             }
+           },
+           {
+             text: 'twitter',
+             icon: 'logo-twitter',
+             handler: () => {
+               console.log('twitter clicked');
+               this.socialSharing.shareViaTwitter(music.name, music.image, music.music_url);
+             }
+           },
+           {
+             text: 'Share',
+             icon: 'share',
+             handler: () => {
+               console.log('share clicked');
+               this.socialSharing.share(music.name, "", music.image, music.music_url);
+             }
+           },
+           {
+             text: 'Cancel',
+             //icon: 'share',
+             role: 'cancel',
+             handler: () => {
+               console.log('Cancel clicked');
+             }
+           }
+         ]
+      });
+    actionSheet.present();
   }
 }

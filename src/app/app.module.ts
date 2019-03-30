@@ -22,6 +22,7 @@ import { MessageProvider } from '../providers/message/message';
 //import { InMemoryDataProvider } from '../providers/in-memory-data/in-memory-data';
 
 //import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { MessageProvider } from '../providers/message/message';
   providers: [
     StatusBar,
     SplashScreen,
+    SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MusicProvider,
     HeroProvider,

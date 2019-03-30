@@ -1,12 +1,13 @@
 {
   "name": "musica",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular",
   "proxies": [
-	{
-	  "path": "/api", 
-	  "proxyUrl": "http://databus.gsdata.cn:8888/api/service"
-	}
+    {
+      "path": "/api",
+      "proxyUrl": "http://databus.gsdata.cn:8888/api/service"
+    }
   ]
 }
-
