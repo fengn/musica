@@ -9,4 +9,5 @@
 8.angular-in-memory-web-api
 9.Adding pull to refresh
 10.socialSharing
+11.Ionic Appflow and Xcode10 真机测试
 
